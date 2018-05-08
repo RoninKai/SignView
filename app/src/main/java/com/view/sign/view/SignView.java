@@ -72,7 +72,8 @@ public class SignView extends View {
             return;
         }
         mBitmap = Bitmap.createBitmap(getMeasuredWidth(), getMeasuredHeight(), Bitmap.Config.ARGB_8888);
-        mBitmap.eraseColor(Color.TRANSPARENT);
+        //生成图片的背景颜色
+        mBitmap.eraseColor(Color.WHITE);
         mCanvas = new Canvas(mBitmap);
     }
 
@@ -121,6 +122,7 @@ public class SignView extends View {
     public void clearSignature() {
         mBitmap.eraseColor(Color.TRANSPARENT);
         invalidate();
+        mBitmap.eraseColor(Color.WHITE);
     }
 
     /**
